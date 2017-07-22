@@ -1,3 +1,47 @@
+
+maven 简介
 1.POM
 2.Dependency(依赖管理)
 3.Coordinates(坐标)
+
+POM(project object model) --> pom.xml --> 总配置文件
+Dependency(依赖) --> /WEB-INF/lib --> 
+Coordinates(坐标) --> groupId artifactID version packaging --> maven表示，唯一标识，packaging可以缺省
+
+
+
+maven安装
+下载文件并解压，找到其中的 conf 文件下的 setting 文件，将其拷贝到 %HOME%\.m2 下，以便于将来maven版本升级不需要更改配置文件。
+其中 %HOME% 即windows用户路径。
+
+其中，可以修改setting配置文件
+<mirror>
+      <id>UK</id>
+      <name>UK Central</name>
+      <url>http://uk.maven.org/maven2</url>
+      <mirrorOf>central</mirrorOf>
+</mirror>
+<mirror>
+      <id>alimaven</id>
+      <name>aliyun maven</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <mirrorOf>central</mirrorOf>        
+</mirror>
+以上表示镜像来源，建议使用阿里云，以避免中心仓库在大量数据访问时，被拒绝访问的情况。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
