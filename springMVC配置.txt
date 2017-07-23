@@ -86,10 +86,30 @@ DispatcherServlet是继承自HttpServlet的，既然SpringMVC是基于DispatcherServlet的
 </beans>
 
 
+==================================  问题  ======================================
+如果你用intellij idea直接创建一个SpringMVC项目，而不是使用maven的话，浏览器弹出的窗口可能显示404，因为web.xml中servlet-mapping的url-pattern默认是*.form
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.form</url-pattern>
+    </servlet-mapping>
+	
+应改成：
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+	
+idea提示 org.springframework.web.context.ContextLoaderListener没找到 -->	打开Project Structure（Ctrl+Alt+Shift+S） 也可以  File > Project Structure > Artifacts > 在右侧Output Layout右击项目名，选择Put into Output Root
 
 
+使用Intellij IDEA 的过程中，新创建的项目启动时报 
+严重: Error configuring application listener of class org.springframework.web.context.ContextLoaderListener 
+Java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener 
+原因之一jar包未被部署： 
+ctrl+shift+alt+s打开项目设置窗口，选择Artifacts，选择打包部署项目，选择Output Layout–》Web-INF，查看下面是否有lib目录，右边的jar包是否添加到lib目录下。 
 
-
-
-
-
+1.WEB-INF目录下原本是没有只有classes，没有lib，所以手动创建lib
+2.Web开发的常识，在使用MyEclipse进行Web开发时，我们把需要的jar包添加到WEB-INF/lib目录下，所以一样的，我的WEB-INF目录下原本没有lib，在WEB-INF目录下创建一个lib目录，把需要的jar包copy进来
