@@ -1,4 +1,4 @@
-
+﻿
 1.Reformat Code	:	Ctrl + Alt + L			格式化代码		
 
 2.Setting	: 	Ctrl + Alt + S			设置中心
@@ -7,11 +7,11 @@
 
 4.Redo Typing	:	Ctrl + Alt + Z			反撤销代码，与常用的撤销有所不同
 
-5.
+5.Reformat code	:	Ctrl + Shift + A		输入单词查找快捷
 
-6.
+6.rename	:	Shift + F6			重构，重命名文件
 
-7.
+7.Run Main	:	Shift + F10			运行			
 
 
 
